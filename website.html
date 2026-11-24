@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f8f3">
+    <meta name="description"
+        content="A friendly, hands-on introduction to HTML, CSS, and Python. Learn by making something small.">
+    <title>Code Garden — Learn by making</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="website.css">
+    <script src="website.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="#home" aria-label="Code Garden home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none">
+                        <path d="M16 5.2c2.8 4.2 2.8 7.1 0 8.8-2.8-1.7-2.8-4.6 0-8.8Z" fill="currentColor" />
+                        <path d="M26.8 11.4c-2.1 4.6-4.6 6.1-7.5 4.6.1-3.3 2.6-4.8 7.5-4.6Z" fill="currentColor" />
+                        <path d="M25.4 24c-4.9-.3-7.1-2.1-6.7-5.3 3.1-1.1 5.3.7 6.7 5.3Z" fill="currentColor" />
+                        <path d="M7.1 11.4c4.9-.2 7.4 1.3 7.5 4.6-2.9 1.5-5.4 0-7.5-4.6Z" fill="currentColor" />
+                        <path d="M8.6 24c1.4-4.6 3.6-6.4 6.7-5.3.4 3.2-1.8 5-6.7 5.3Z" fill="currentColor" />
+                        <circle cx="16" cy="16.5" r="2.5" fill="#F6F7F1" />
+                    </svg>
+                </span>
+                <span>code garden</span>
+            </a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="#paths">Learning paths</a>
+                <a href="#approach">Our approach</a>
+            </nav>
+            <a class="progress-link" href="#paths">
+                <span class="progress-icon" aria-hidden="true">✓</span>
+                <span><strong id="progress-count">0 of 3</strong><small>lessons complete</small></span>
+                <span class="mini-progress" aria-hidden="true"><span id="mini-progress-fill"></span></span>
+            </a>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero-section" id="home" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="eyebrow-dot"></span> Your first step starts here</p>
+                <h1 id="hero-title">A softer start<br>to a world of <span>code.</span></h1>
+                <p class="hero-intro">No pressure. No assumed knowledge. Just three friendly paths to help you make your
+                    first thing with code.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#paths">Find your first lesson <span
+                            aria-hidden="true">↗</span></a>
+                    <a class="text-link" href="#approach">See how it works <span aria-hidden="true">↓</span></a>
+                </div>
+                <ul class="hero-promises" aria-label="What to expect">
+                    <li><span aria-hidden="true">✓</span> Made for beginners</li>
+                    <li><span aria-hidden="true">◷</span> Start in 20 minutes</li>
+                </ul>
+            </div>
+
+            <div class="demo-stage">
+                <div class="stage-orbit orbit-one" aria-hidden="true"></div>
+                <div class="stage-orbit orbit-two" aria-hidden="true"></div>
+                <div class="demo-card">
+                    <div class="demo-topbar">
+                        <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+                        <span class="demo-filename">a-little-bit-of-code</span>
+                        <span class="demo-live"><span></span> LIVE PREVIEW</span>
+                    </div>
+                    <div class="demo-tabs" role="tablist" aria-label="Preview code examples">
+                        <button class="demo-tab is-active" id="tab-html" type="button" role="tab" aria-selected="true"
+                            aria-controls="demo-code-panel" data-demo="html">HTML</button>
+                        <button class="demo-tab" id="tab-css" type="button" role="tab" aria-selected="false"
+                            aria-controls="demo-code-panel" data-demo="css" tabindex="-1">CSS</button>
+                        <button class="demo-tab" id="tab-python" type="button" role="tab" aria-selected="false"
+                            aria-controls="demo-code-panel" data-demo="python" tabindex="-1">Python</button>
+                    </div>
+                    <div class="demo-workspace">
+                        <div class="editor-pane">
+                            <div class="pane-heading"><span>YOUR FIRST LINE</span><button class="copy-button"
+                                    id="copy-code" type="button">Copy <span aria-hidden="true">▢</span></button></div>
+                            <div class="code-editor" id="demo-code-panel" role="tabpanel" aria-labelledby="tab-html">
+                                <span class="line-number" id="demo-line-numbers" aria-hidden="true">1
+                                    2</span>
+                                <pre><code id="demo-code">&lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;p&gt;I'm learning to code.&lt;/p&gt;</code></pre>
+                            </div>
+                            <p class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p>
+                        </div>
+                        <div class="preview-pane">
+                            <div class="pane-heading"><span>WHAT YOU'LL MAKE</span><span class="preview-sparkle"
+                                    aria-hidden="true">✳</span></div>
+                            <div class="browser-preview" id="browser-preview">
+                                <div class="preview-browser-bar">
+                                    <span></span><span></span><span></span><b>my-first-page.site</b></div>
+                                <div class="preview-content">
+                                    <p class="preview-kicker" id="preview-kicker">A LITTLE HELLO</p>
+                                    <h2 id="preview-title">Hello, world!</h2>
+                                    <p id="preview-description">I'm learning to code.<br>It's nice to meet you.</p>
+                                    <span class="preview-button" id="preview-button">Keep going <span
+                                            aria-hidden="true">→</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-footer"><span class="footer-leaf" aria-hidden="true">✿</span><span
+                            id="demo-caption">A tiny line of HTML can make a whole page.</span><span class="step-dots"
+                            aria-hidden="true"><i class="selected"></i><i></i><i></i></span></div>
+                </div>
+                <div class="floating-chip chip-one"><span aria-hidden="true">✦</span> Curiosity welcome</div>
+                <div class="floating-chip chip-two"><span aria-hidden="true">⌘</span> Your pace, always</div>
+            </div>
+        </section>
+
+        <section class="paths-section" id="paths" aria-labelledby="paths-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Choose your first little win</p>
+                    <h2 id="paths-title">Three paths.<br class="mobile-break"> <span>Plenty of possibility.</span></h2>
+                </div>
+                <p class="section-description">Pick what feels interesting. You can always explore the others later.</p>
+            </div>
+
+            <div class="path-grid">
+                <article class="path-card html-card">
+                    <div class="card-top"><span class="language-icon html-icon" aria-hidden="true">&lt;/&gt;</span><span
+                            class="level">01 <span>/</span> THE STRUCTURE</span></div>
+                    <h3>HTML</h3>
+                    <p class="card-description">Build the bones of a web page with headings, words, and links.</p>
+                    <div class="card-bottom"><span class="card-time"><span aria-hidden="true">◷</span> 20
+                            min</span><span class="card-status" data-status="html">Ready when you are</span></div>
+                    <button class="path-link" type="button" data-course="html" aria-pressed="true"><span>Explore
+                            HTML</span><span class="path-arrow" aria-hidden="true">↗</span></button>
+                </article>
+                <article class="path-card css-card">
+                    <div class="card-top"><span class="language-icon css-icon" aria-hidden="true">✳</span><span
+                            class="level">02 <span>/</span> THE PERSONALITY</span></div>
+                    <h3>CSS</h3>
+                    <p class="card-description">Add color, shape, and your own style to everything on the web.</p>
+                    <div class="card-bottom"><span class="card-time"><span aria-hidden="true">◷</span> 25
+                            min</span><span class="card-status" data-status="css">Ready when you are</span></div>
+                    <button class="path-link" type="button" data-course="css" aria-pressed="false"><span>Explore
+                            CSS</span><span class="path-arrow" aria-hidden="true">↗</span></button>
+                </article>
+                <article class="path-card python-card">
+                    <div class="card-top"><span class="language-icon python-icon" aria-hidden="true">Py</span><span
+                            class="level">03 <span>/</span> THE LOGIC</span></div>
+                    <h3>Python</h3>
+                    <p class="card-description">Give your computer simple instructions and see what it can do.</p>
+                    <div class="card-bottom"><span class="card-time"><span aria-hidden="true">◷</span> 30
+                            min</span><span class="card-status" data-status="python">Ready when you are</span></div>
+                    <button class="path-link" type="button" data-course="python" aria-pressed="false"><span>Explore
+                            Python</span><span class="path-arrow" aria-hidden="true">↗</span></button>
+                </article>
+            </div>
+
+            <section class="lesson-panel" id="lesson-panel" aria-labelledby="lesson-title">
+                <div class="lesson-panel-copy">
+                    <span class="lesson-kicker"><span class="lesson-kicker-dot"></span><span id="lesson-eyebrow">YOUR
+                            FIRST MINI LESSON · HTML</span></span>
+                    <h3 id="lesson-title">Start with a hello.</h3>
+                    <p id="lesson-description">HTML gives a web page its structure. Start with a heading, then add a
+                        little introduction underneath it.</p>
+                    <p class="lesson-hint"><span aria-hidden="true">✦</span> There is no wrong way to begin.</p>
+                </div>
+                <div class="lesson-example">
+                    <div class="example-top"><span id="example-label">TRY THIS · HTML</span><span class="example-time"
+                            id="lesson-time">5 MIN</span></div>
+                    <pre><code id="lesson-code">&lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;p&gt;I'm learning to code.&lt;/p&gt;</code></pre>
+                    <div class="example-bottom">
+                        <button class="complete-button" id="complete-button" type="button"><span
+                                id="complete-label">Mark lesson complete</span><span class="complete-check"
+                                aria-hidden="true">✓</span></button>
+                        <p class="lesson-feedback" id="lesson-feedback" role="status" aria-live="polite"></p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="approach-section" id="approach" aria-labelledby="approach-title">
+            <div class="approach-inner">
+                <div class="approach-intro">
+                    <p class="eyebrow">A gentler way to learn</p>
+                    <h2 id="approach-title">Small steps.<br><span>Real progress.</span></h2>
+                    <p>You don't need to know everything to get started. You only need one next step.</p>
+                    <a href="#paths" class="approach-link">Pick your first path <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="steps">
+                    <article class="step"><span class="step-number">01</span>
+                        <div>
+                            <h3>Choose what interests you</h3>
+                            <p>Begin with the tool that sparks your curiosity. There's no wrong first step.</p>
+                        </div><span class="step-mark" aria-hidden="true">✳</span>
+                    </article>
+                    <article class="step"><span class="step-number">02</span>
+                        <div>
+                            <h3>Try one tiny lesson</h3>
+                            <p>See a clear example, explore the code, and learn one useful idea.</p>
+                        </div><span class="step-mark" aria-hidden="true">↗</span>
+                    </article>
+                    <article class="step"><span class="step-number">03</span>
+                        <div>
+                            <h3>Come back to your progress</h3>
+                            <p>Your completed lessons stay saved in this browser, ready for next time.</p>
+                        </div><span class="step-mark" aria-hidden="true">✓</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">✳</span><span>code
+                garden</span></a>
+        <p>Made for curious minds and first tries <span aria-hidden="true">✿</span></p>
+        <a class="back-to-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+</body>
+
+</html>
